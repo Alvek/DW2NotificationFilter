@@ -1,0 +1,160 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows7.0</TargetFramework>
+		<UseWindowsForms>True</UseWindowsForms>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="HarmonyX" Version="2.10.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="DistantWorlds.Core">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="DistantWorlds.Types">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds.Types.dll</HintPath>
+		</Reference>
+		<Reference Include="DistantWorlds.UI">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="DistantWorlds2">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds2.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Assets">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Assets.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Assets.Models">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Assets.Models.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Assimp">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Assimp.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Assimp.Translation">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Assimp.Translation.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Audio">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Audio.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Assets">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Assets.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Assets.CompilerApp">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Assets.CompilerApp.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.BuildEngine.Common">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.BuildEngine.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Design">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Design.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.IO">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.IO.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Mathematics">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Mathematics.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.MicroThreading">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.MicroThreading.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Packages">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Packages.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.ProjectTemplating">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.ProjectTemplating.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Reflection">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Reflection.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Serialization">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Serialization.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Shaders">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Shaders.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Core.Yaml">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Core.Yaml.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Engine">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Engine.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Games">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Games.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Graphics">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Graphics.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Importer.Assimp">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Importer.Assimp.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Importer.Common">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Importer.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Importer.FBX">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Importer.FBX.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Input">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Input.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Irony">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Irony.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Native">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Native.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Navigation">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Navigation.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Particles">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Particles.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Physics">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Physics.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Rendering">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Rendering.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Shaders">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Shaders.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Shaders.Compiler">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Shaders.Compiler.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Shaders.Parser">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Shaders.Parser.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.SpriteStudio.Offline">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.SpriteStudio.Offline.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.SpriteStudio.Runtime">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.SpriteStudio.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.TextureConverter">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.TextureConverter.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.UI">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.Video">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.Video.dll</HintPath>
+		</Reference>
+		<Reference Include="Stride.VirtualReality">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\Stride.VirtualReality.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+	  <Exec Command="xcopy &quot;h:\Projects\DW2TestMod\ClassLibrary2\bin\Debug\net7.0-windows7.0\ClassLibrary2.*&quot; &quot;c:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\&quot; /Y" />
+	</Target>
+
+</Project>

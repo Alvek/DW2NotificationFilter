@@ -1,0 +1,59 @@
+﻿using Valve.VR;
+using System.Windows.Forms;
+using System.IO;
+using System;
+using HarmonyLib;
+using System.Linq;
+using DistantWorlds.UI;
+
+namespace ClassLibrary2
+{
+    public class Class1
+    {
+        public static void Test()
+        {
+            FileLog.Reset();
+            Harmony.DEBUG = true;
+            var harmony = new Harmony("com.example.patch");
+            //Type t = AppDomain.CurrentDomain.GetAssemblies()
+            //.Reverse()
+            //.Select(assembly => assembly.GetType("UserInterfaceController"))
+            //.FirstOrDefault(t => t != null);
+            var mOriginal = AccessTools.Method(typeof(DistantWorlds.UI.UserInterfaceController), nameof(DistantWorlds.UI.UserInterfaceController.SetActionButtonsFromTasks)); // if possible use nameof() here
+            //var mOriginal = AccessTools.Method(t, "SetActionButtonsFromTasks"); // if possible use nameof() here
+            var mPrefix = SymbolExtensions.GetMethodInfo(() => MyPrefix());
+            var mPostfix = SymbolExtensions.GetMethodInfo(() => MyPostfix());
+            // in general, add null checks here (new HarmonyMethod() does it for you too)
+
+            //harmony.Patch(mOriginal, new HarmonyMethod(mPrefix), new HarmonyMethod(mPostfix));
+            harmony.Patch(mOriginal, null, new HarmonyMethod(mPostfix));
+
+            FileLog.Log("patch done");
+        }
+        public static void Test(Type t)
+        {
+            var harmony = new Harmony("com.example.patch");
+
+            var mOriginal = AccessTools.Method(t, "DoSomething"); // if possible use nameof() here
+            var mPrefix = SymbolExtensions.GetMethodInfo(() => MyPrefix());
+            var mPostfix = SymbolExtensions.GetMethodInfo(() => MyPostfix());
+            // in general, add null checks here (new HarmonyMethod() does it for you too)
+
+            //harmony.Patch(mOriginal, new HarmonyMethod(mPrefix), new HarmonyMethod(mPostfix));
+            harmony.Patch(mOriginal, null, new HarmonyMethod(mPostfix));
+
+            FileLog.Log("patch done");
+        }
+
+        public static void MyPrefix()
+        {
+            // ...
+        }
+
+        public static void MyPostfix()
+        {
+            FileLog.Log("postifx");
+            MessageBox.Show("OhShit, it's alive! muahhaha!!!!");
+        }
+    }
+}
