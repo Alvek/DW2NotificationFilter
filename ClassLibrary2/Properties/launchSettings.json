@@ -2,9 +2,9 @@
   "profiles": {
     "Profile 1": {
       "commandName": "Executable",
-      "executablePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Distant Worlds 2\\DistantWorlds2.exe",
-      "commandLineArgs": "--low-level-inject \"h:\\Projects\\DW2TestMod\\ClassLibrary2\\bin\\Debug\\net7.0-windows7.0\\NotificationFilter.dll!ClassLibrary2.Class0.Test\" --wait-for-debugger --skip-splash --continue",
-      "workingDirectory": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\Distant Worlds 2\\",
+      "executablePath": "D:\\Games\\Distant Worlds 2\\DistantWorlds2.exe",
+      "commandLineArgs": "--low-level-inject \"j:\\Projects\\DW2TestMod\\ClassLibrary2\\bin\\Debug\\net7.0-windows7.0\\NotificationFilter.dll!ClassLibrary2.Class0.Test\" --wait-for-debugger --skip-splash --continue",
+      "workingDirectory": "d:\\Games\\Distant Worlds 2\\",
       "nativeDebugging": false
     }
   }

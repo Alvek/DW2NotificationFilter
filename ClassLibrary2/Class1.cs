@@ -53,7 +53,7 @@ namespace ClassLibrary2
         public static void Test()
         {
             //Logger.ChannelFilter = Logger.LogChannel.All;
-            Harmony.DEBUG = true;
+            //Harmony.DEBUG = true;
             //FileLog.Reset();
             var harmony = new Harmony("com.test.test");
 
@@ -106,41 +106,34 @@ namespace ClassLibrary2
     //[HarmonyPatch(new Type[] { typeof(bool), typeof(List<EmpireMessage>) })]
     public class NotificationFilterPatcher
     {
-        private static DWButton _dwButton;
+        private static DWButton _btnFilterCurrent;
+        private static DWButton _btnOpenSettings;
+        private static DWPanel _panelBackground;
         private static ReaderWriterLockSlim _ruleListLocker = new(LockRecursionPolicy.NoRecursion);
         private static int _alreadyRunning = _StoppedValue;
         private const int _RunningValue = 1;
         private const int _StoppedValue = 0;
 
-        public static Rules _Rules = new Rules();
+        private static Form1 _fFilterSettings = new Form1();
 
+        public static Rules _Rules = new Rules();
 
         static NotificationFilterPatcher()
         {
-            _dwButton = new DWButton();
-            _dwButton.PostScene = true;
+            _btnFilterCurrent = CreateButton();
+            _btnOpenSettings = CreateButton();
 
-            _dwButton.ButtonColorDisabled = new Stride.Core.Mathematics.Color(1, 1, 1, 255);
-            _dwButton.ButtonColorGradient = new Stride.Core.Mathematics.Color(48, 48, 48, 255);
-            _dwButton.ButtonColorHover = new Stride.Core.Mathematics.Color(120, 120, 120, 255);
-            _dwButton.ButtonColorToggle = new Stride.Core.Mathematics.Color(245, 180, 96, 255);
-            _dwButton.BackColor = new Stride.Core.Mathematics.Color(96, 96, 96, 48);
-            _dwButton.BorderColor = new Stride.Core.Mathematics.Color(128, 128, 128, 48);
-            _dwButton.DarkColor = new Stride.Core.Mathematics.Color(96, 96, 96, 255);
-            _dwButton.ForeColor = new Stride.Core.Mathematics.Color(212, 212, 212, 255);
-            _dwButton.ForeColorHover = new Stride.Core.Mathematics.Color(255, 255, 255, 255);
-            _dwButton.ListSelectionColor = new Stride.Core.Mathematics.Color(212, 212, 212, 255);
-            _dwButton.ListSelectionColor = new Stride.Core.Mathematics.Color(255, 0, 0, 255);
-            _dwButton.ShadowColor = new Stride.Core.Mathematics.Color(0, 0, 0, 255);
-            _dwButton.DropDownSelectorBackgroundColor = new Stride.Core.Mathematics.Color(160, 160, 160, 40);
-            _dwButton.DropDownSelectorBackgroundColorHover = new Stride.Core.Mathematics.Color(64, 64, 64, 128);
 
-            DWControl.SetupButton(ref _dwButton, "TestBtn", new Stride.Core.Mathematics.Vector2(90, 90), new Stride.Core.Mathematics.Vector2(90, 90), "TestBtn", CreateFilterRule, true);
-            //DWControl.SetupButton(ref _dwButton, "TestBtn", new Stride.Core.Mathematics.Vector2(90, 90), new Stride.Core.Mathematics.Vector2(90, 90), "TestBtn", null, true);
-            _dwButton.Visible = false;
+            DWControl.SetupButton(ref _btnFilterCurrent, "FilterCurrent", new Stride.Core.Mathematics.Vector2(90, 90), new Stride.Core.Mathematics.Vector2(90, 90), "Filter current", CreateFilterRule, true);
+            DWControl.SetupButton(ref _btnOpenSettings, "OpenFilterSettings", new Stride.Core.Mathematics.Vector2(90, 90), new Stride.Core.Mathematics.Vector2(90, 90), "Open filter settings", ShowFilterSettings, true);
 
+            _btnFilterCurrent.Visible = false;
+            _btnOpenSettings.Visible = false;
+
+            _panelBackground = CreatePanel(_fFilterSettings.Size);
+            _fFilterSettings.Hiden += fFilterSettings_Hiden;
+            //UserInterfaceController.AddCustomControl(_dwBackPanel);
         }
-
 
         public static void Postfix(ref bool __result, EmpireMessage message)
         {
@@ -222,21 +215,30 @@ namespace ClassLibrary2
             //    UserInterfaceController.EmpireMessageDialog.Position.Y);
             //_dwButton.TargetPosition = new Stride.Core.Mathematics.Vector2 (UserInterfaceController.EmpireMessageDialog.Position.X, 
             //    UserInterfaceController.EmpireMessageDialog.TargetPosition.Y + UserInterfaceController.EmpireMessageDialog.ClipRegion.Height);
-            _dwButton.Visible = true;
+            _btnFilterCurrent.Visible = true;
+            _btnOpenSettings.Visible = true;
         }
         public static void HideButton()
-        { _dwButton.Visible = false; }
+        {
+            _btnFilterCurrent.Visible = false;
+            _btnOpenSettings.Visible = false;
+        }
 
         public static void UpdatePosition(Stride.Core.Mathematics.Vector2 pos)
         {
-            _dwButton.Position = new Stride.Core.Mathematics.Vector2(UserInterfaceController.EmpireMessageDialog.TargetPosition.X,
+            _btnFilterCurrent.Position = new Stride.Core.Mathematics.Vector2(UserInterfaceController.EmpireMessageDialog.TargetPosition.X,
                 UserInterfaceController.EmpireMessageDialog.TargetPosition.Y + UserInterfaceController.EmpireMessageDialog.Size.Y);
-            _dwButton.TargetPosition = new Stride.Core.Mathematics.Vector2(UserInterfaceController.EmpireMessageDialog.TargetPosition.X,
+            _btnFilterCurrent.TargetPosition = new Stride.Core.Mathematics.Vector2(UserInterfaceController.EmpireMessageDialog.TargetPosition.X,
+                UserInterfaceController.EmpireMessageDialog.TargetPosition.Y + UserInterfaceController.EmpireMessageDialog.Size.Y);
+
+            _btnOpenSettings.Position = new Stride.Core.Mathematics.Vector2(UserInterfaceController.EmpireMessageDialog.TargetPosition.X + _btnFilterCurrent.Size.X,
+                UserInterfaceController.EmpireMessageDialog.TargetPosition.Y + UserInterfaceController.EmpireMessageDialog.Size.Y);
+            _btnOpenSettings.TargetPosition = new Stride.Core.Mathematics.Vector2(UserInterfaceController.EmpireMessageDialog.TargetPosition.X + _btnFilterCurrent.Size.X,
                 UserInterfaceController.EmpireMessageDialog.TargetPosition.Y + UserInterfaceController.EmpireMessageDialog.Size.Y);
         }
         private static void CreateFilterRule(object? sender, DWEventArgs e)
         {
-            if(UserInterfaceController.EmpireMessageDialog.Message != null)
+            if (UserInterfaceController.EmpireMessageDialog.Message != null)
             {
                 _ruleListLocker.EnterWriteLock();
                 var msg = UserInterfaceController.EmpireMessageDialog.Message;
@@ -248,8 +250,65 @@ namespace ClassLibrary2
                 _Rules.RuleList.Add(rule);
                 _ruleListLocker.ExitWriteLock();
             }
+
         }
- 
+
+        private static DWPanel CreatePanel(Size size)
+        {
+            DWPanel res = new DWPanel();
+            res.BorderColor = new Stride.Core.Mathematics.Color(128, 128, 128, 48);
+            res.BackgroundImageTintColor = new Stride.Core.Mathematics.Color(255, 255, 255, 255);
+            res.DarkColor = new Stride.Core.Mathematics.Color(96, 96, 96, 255);
+            res.ForeColor = new Stride.Core.Mathematics.Color(212, 212, 212, 255);
+            res.ListSelectionColor = new Stride.Core.Mathematics.Color(255, 0, 0, 255);
+            res.ShadowColor = new Stride.Core.Mathematics.Color(0, 0, 0, 255);
+
+            res.Name = "TestPanel";
+            res.HeaderText = "Filter settings";
+            
+            UserInterfaceController.HoverInfo.Visible = false;
+            res.Visible = true;
+            res.AddCloseButtonToHeader = true;
+            res.SetFeatureDefaults();
+            return res;
+        }
+        private static DWButton CreateButton()
+        {
+            DWButton res = new()
+            {
+                PostScene = true,
+                ButtonColorDisabled = new Stride.Core.Mathematics.Color(1, 1, 1, 255),
+                ButtonColorGradient = new Stride.Core.Mathematics.Color(48, 48, 48, 255),
+                ButtonColorHover = new Stride.Core.Mathematics.Color(120, 120, 120, 255),
+                ButtonColorToggle = new Stride.Core.Mathematics.Color(245, 180, 96, 255),
+                BackColor = new Stride.Core.Mathematics.Color(96, 96, 96, 48),
+                BorderColor = new Stride.Core.Mathematics.Color(128, 128, 128, 48),
+                DarkColor = new Stride.Core.Mathematics.Color(96, 96, 96, 255),
+                ForeColor = new Stride.Core.Mathematics.Color(212, 212, 212, 255),
+                ForeColorHover = new Stride.Core.Mathematics.Color(255, 255, 255, 255),
+                ListSelectionColor = new Stride.Core.Mathematics.Color(255, 0, 0, 255),
+                ShadowColor = new Stride.Core.Mathematics.Color(0, 0, 0, 255),
+                DropDownSelectorBackgroundColor = new Stride.Core.Mathematics.Color(160, 160, 160, 40),
+                DropDownSelectorBackgroundColorHover = new Stride.Core.Mathematics.Color(64, 64, 64, 128)
+            };
+            return res;
+        }
+
+        private static void ShowFilterSettings(object? sender, DWEventArgs e)
+        {
+            _panelBackground.SetSizeAndPosition(new Stride.Core.Mathematics.Vector2(_fFilterSettings.Width, _fFilterSettings.Height + _panelBackground.HeaderHeight), new Stride.Core.Mathematics.Vector2());
+            _panelBackground.Position = new Stride.Core.Mathematics.Vector2(UserInterfaceController.ScreenWidth / 2 - _fFilterSettings.Width / 2, UserInterfaceController.ScreenHeight / 2 - _fFilterSettings.Height / 2 - _panelBackground.HeaderHeight);
+            _panelBackground.TargetPosition = new Stride.Core.Mathematics.Vector2(UserInterfaceController.ScreenWidth / 2 - _fFilterSettings.Width / 2, UserInterfaceController.ScreenHeight / 2 - _fFilterSettings.Height / 2 - _panelBackground.HeaderHeight);
+            UserInterfaceController.AddCustomControl(_panelBackground);
+            _fFilterSettings.Location = new Point(UserInterfaceController.ScreenWidth / 2 - _fFilterSettings.Width / 2, UserInterfaceController.ScreenHeight / 2 - _fFilterSettings.Height / 2 );
+            _fFilterSettings.Show();
+        }
+
+        private static void fFilterSettings_Hiden(object? sender, EventArgs e)
+        {
+            UserInterfaceController.RemoveCustomControl(_panelBackground);
+        }
+
         //[HarmonyDebug]
         //[HarmonyPatch(typeof(DistantWorlds.UI.UserInterfaceController))]
         //[HarmonyPatch(nameof(DistantWorlds.UI.UserInterfaceController.SetActionButtonsFromTasks))] // if possible use nameof() here
@@ -399,9 +458,32 @@ namespace ClassLibrary2
     public class DWGamePatcher
     {
         public static ScaledRenderer _Renderer;
-        public static void Postfix(ScaledRenderer ____Renderer)
+        
+        public static void Postfix(ScaledRenderer ____Renderer, DWGame __instance)
         {
             _Renderer = ____Renderer;
+            __instance.Window.Deactivated += Window_Deactivated;
+            __instance.Window.Activated += Window_Activated;
+            __instance.Window.FullscreenChanged += Window_FullscreenChanged;
+            __instance.Window.ClientSizeChanged += Window_ClientSizeChanged;
+        }
+
+        private static void Window_ClientSizeChanged(object? sender, EventArgs e)
+        {
+        }
+
+        private static void Window_FullscreenChanged(object? sender, EventArgs e)
+        {
+        }
+
+        private static void Window_Activated(object? sender, EventArgs e)
+        {
+
+        }
+
+        private static void Window_Deactivated(object? sender, EventArgs e)
+        {
+            
         }
     }
 }

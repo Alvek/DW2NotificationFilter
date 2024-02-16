@@ -8,22 +8,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="DistantWorlds.Core">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="DistantWorlds.Types">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds.Types.dll</HintPath>
-    </Reference>
-    <Reference Include="DistantWorlds.UI">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="DistantWorlds2">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds2.dll</HintPath>
-    </Reference>
-    <Reference Include="DistantWorlds2.Windows">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Distant Worlds 2\DistantWorlds2.Windows.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

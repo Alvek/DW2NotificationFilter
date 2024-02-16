@@ -13,145 +13,150 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="DistantWorlds.Core">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\DistantWorlds.Core.dll</HintPath>
-		</Reference>
-		
-		<Reference Include="DistantWorlds.Types">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\DistantWorlds.Types.dll</HintPath>
-		</Reference>
-		<Reference Include="DistantWorlds.UI">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\DistantWorlds.UI.dll</HintPath>
-		</Reference>
-		<Reference Include="DistantWorlds2">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\DistantWorlds2.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Assets">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Assets.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Assets.Models">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Assets.Models.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Assimp">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Assimp.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Assimp.Translation">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Assimp.Translation.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Audio">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Audio.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Assets">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Assets.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Assets.CompilerApp">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Assets.CompilerApp.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.BuildEngine.Common">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.BuildEngine.Common.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Design">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Design.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.IO">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.IO.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Mathematics">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Mathematics.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.MicroThreading">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.MicroThreading.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Packages">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Packages.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.ProjectTemplating">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.ProjectTemplating.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Reflection">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Reflection.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Serialization">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Serialization.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Shaders">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Shaders.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Core.Yaml">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Core.Yaml.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Engine">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Engine.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Games">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Games.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Graphics">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Graphics.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Importer.Assimp">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Importer.Assimp.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Importer.Common">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Importer.Common.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Importer.FBX">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Importer.FBX.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Input">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Input.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Irony">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Irony.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Native">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Native.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Navigation">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Navigation.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Particles">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Particles.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Physics">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Physics.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Rendering">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Rendering.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Shaders">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Shaders.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Shaders.Compiler">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Shaders.Compiler.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Shaders.Parser">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Shaders.Parser.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.SpriteStudio.Offline">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.SpriteStudio.Offline.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.SpriteStudio.Runtime">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.SpriteStudio.Runtime.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.TextureConverter">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.TextureConverter.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.UI">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.UI.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.Video">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.Video.dll</HintPath>
-		</Reference>
-		<Reference Include="Stride.VirtualReality">
-			<HintPath>f:\SteamLibrary\steamapps\common\\Distant Worlds 2\Stride.VirtualReality.dll</HintPath>
-		</Reference>
+	  <Reference Include="DistantWorlds.Core">
+	    <HintPath>D:\Games\Distant Worlds 2\DistantWorlds.Core.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DistantWorlds.Types">
+	    <HintPath>D:\Games\Distant Worlds 2\DistantWorlds.Types.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DistantWorlds.UI">
+	    <HintPath>D:\Games\Distant Worlds 2\DistantWorlds.UI.dll</HintPath>
+	  </Reference>
+	  <Reference Include="DistantWorlds2">
+	    <HintPath>D:\Games\Distant Worlds 2\DistantWorlds2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Assets">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Assets.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Assets.Models">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Assets.Models.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Assimp">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Assimp.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Assimp.Translation">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Assimp.Translation.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Audio">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Audio.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Assets">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Assets.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Assets.CompilerApp">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Assets.CompilerApp.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.BuildEngine.Common">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.BuildEngine.Common.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Design">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Design.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.IO">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.IO.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Mathematics">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Mathematics.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.MicroThreading">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.MicroThreading.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Packages">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Packages.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.ProjectTemplating">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.ProjectTemplating.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Reflection">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Reflection.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Serialization">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Serialization.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Shaders">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Shaders.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Core.Yaml">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Core.Yaml.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Engine">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Engine.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Games">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Games.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Graphics">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Graphics.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Importer.Assimp">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Importer.Assimp.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Importer.Common">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Importer.Common.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Importer.FBX">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Importer.FBX.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Input">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Input.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Irony">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Irony.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Native">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Native.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Navigation">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Navigation.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Particles">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Particles.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Physics">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Physics.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Rendering">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Rendering.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Shaders">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Shaders.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Shaders.Compiler">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Shaders.Compiler.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Shaders.Parser">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Shaders.Parser.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.SpriteStudio.Offline">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.SpriteStudio.Offline.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.SpriteStudio.Runtime">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.SpriteStudio.Runtime.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.TextureConverter">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.TextureConverter.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.UI">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.UI.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.Video">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.Video.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Stride.VirtualReality">
+	    <HintPath>D:\Games\Distant Worlds 2\Stride.VirtualReality.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Form1.cs">
+	    <SubType>Form</SubType>
+	  </Compile>
 	</ItemGroup>
 
 </Project>
