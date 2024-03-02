@@ -3,7 +3,7 @@
     "Profile 1": {
       "commandName": "Executable",
       "executablePath": "D:\\Games\\Distant Worlds 2\\DistantWorlds2.exe",
-      "commandLineArgs": "--low-level-inject \"j:\\Projects\\DW2TestMod\\ClassLibrary2\\bin\\Debug\\net7.0-windows7.0\\NotificationFilter.dll!ClassLibrary2.Class0.Test\" --wait-for-debugger --skip-splash --continue",
+      "commandLineArgs": "--low-level-inject \"j:\\Projects\\DW2TestMod\\ClassLibrary2\\bin\\Debug\\net7.0-windows7.0\\NotificationFilter.dll!NotificationFilter.Preloader.Init\" --wait-for-debugger --skip-splash --continue",
       "workingDirectory": "d:\\Games\\Distant Worlds 2\\",
       "nativeDebugging": false
     }

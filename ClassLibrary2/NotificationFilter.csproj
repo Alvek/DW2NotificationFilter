@@ -6,12 +6,25 @@
 		<Nullable>enable</Nullable>
 		<LangVersion>latest</LangVersion>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<EnableNETAnalyzers>False</EnableNETAnalyzers>
+		<RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
+		<RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+		<AnalysisLevel>none</AnalysisLevel>
+		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="HarmonyX-Fix" Version="2.11.0" />
+	  <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
+	    <PrivateAssets>all</PrivateAssets>
+	  </PackageReference>
 	</ItemGroup>
 
+	<ItemGroup>
+		<Content Include="NativeMethods.txt" />
+	</ItemGroup>
+	
 	<ItemGroup>
 	  <Reference Include="DistantWorlds.Core">
 	    <HintPath>D:\Games\Distant Worlds 2\DistantWorlds.Core.dll</HintPath>

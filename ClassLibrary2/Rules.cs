@@ -10,7 +10,7 @@ namespace NotificationFilter
 {
     public class Rules
     {
-        public string RuleSetName { get; set; }
+        public string RuleSetName { get; set; } = string.Empty;
         public List<BaseRule> RuleList { get; set; } = [];
     }
     public class BaseRule

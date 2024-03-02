@@ -6,7 +6,7 @@ namespace NotificationFilter
 {
     public partial class Form1 : Form
     {
-        public event EventHandler Hiden;
+        public event EventHandler? Hiden;
 
         public Form1()
         {
