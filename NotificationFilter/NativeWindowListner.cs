@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Windows.Win32;
@@ -15,12 +17,15 @@ namespace NotificationFilter
         public event EventHandler? Activating;
         public event EventHandler? Deactivating;
 
-        public void SetHandle(nint handle)
+        private nint _settingFormHandle;
+
+        public void SetHandles(nint gameHandle, nint settingFormHandle)
         {
-            if (nint.Zero == handle || HandleSet) return;
+            if (nint.Zero == gameHandle || HandleSet) return;
 
             HandleSet = true;
-            AssignHandle(handle);
+            AssignHandle(gameHandle);
+            _settingFormHandle = settingFormHandle;
         }
 
         //// Listen for the control's window creation and then hook into it.
@@ -45,10 +50,12 @@ namespace NotificationFilter
                     // Notify the form that this message was received.
                     // Application is activated or deactivated, 
                     // based upon the WParam parameter.
-                    if(m.WParam != 0)
-                        Activating?.Invoke(this, new EventArgs());
-                    else
-                        Deactivating?.Invoke(this, new EventArgs());
+                    if (m.WParam != 0)
+                    { Activating?.Invoke(this, new EventArgs()); }
+                    else if (m.LParam != _settingFormHandle)
+                    {                        
+                        Deactivating?.Invoke(this, new EventArgs()); 
+                    }
                     break;
             }
             base.WndProc(ref m);

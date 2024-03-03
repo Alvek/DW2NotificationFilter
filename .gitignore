@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Directory.Build.props
+.vshistory
+/WinFormsApp1/WinFormsApp1.csproj
+/NotificationFilter/Properties/.vshistory/launchSettings.json

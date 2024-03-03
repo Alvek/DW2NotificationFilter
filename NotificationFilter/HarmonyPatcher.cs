@@ -134,7 +134,7 @@ namespace NotificationFilter
     {        
         public static void Postfix(ScaledRenderer ____Renderer, DWGame __instance)
         {
-            Core.Init(____Renderer);
+            Core.SetRenderer(____Renderer);
         }
     }
 }

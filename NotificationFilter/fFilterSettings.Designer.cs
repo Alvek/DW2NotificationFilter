@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace NotificationFilter
 {
-    partial class Form1
+    partial class fFilterSettings
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,94 +34,70 @@ namespace NotificationFilter
             components = new System.ComponentModel.Container();
             dataGridView1 = new DataGridView();
             bindingSource1 = new BindingSource(components);
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            ruleListBindingSource = new BindingSource(components);
+            messageTypeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            defaultActionDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ItemRuleId = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ruleListBindingSource).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { messageTypeDataGridViewTextBoxColumn, defaultActionDataGridViewTextBoxColumn, ItemRuleId });
+            dataGridView1.DataSource = ruleListBindingSource;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(731, 401);
             dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // bindingSource1
             // 
-            button1.ForeColor = SystemColors.ControlText;
-            button1.Location = new Point(0, 407);
-            button1.Name = "button1";
-            button1.Size = new Size(85, 42);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            bindingSource1.DataSource = typeof(Rules);
             // 
-            // button2
+            // ruleListBindingSource
             // 
-            button2.Location = new Point(91, 407);
-            button2.Name = "button2";
-            button2.Size = new Size(85, 42);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ruleListBindingSource.DataMember = "RuleList";
+            ruleListBindingSource.DataSource = bindingSource1;
             // 
-            // button3
+            // messageTypeDataGridViewTextBoxColumn
             // 
-            button3.Location = new Point(182, 407);
-            button3.Name = "button3";
-            button3.Size = new Size(85, 42);
-            button3.TabIndex = 3;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            messageTypeDataGridViewTextBoxColumn.DataPropertyName = "MessageType";
+            messageTypeDataGridViewTextBoxColumn.HeaderText = "MessageType";
+            messageTypeDataGridViewTextBoxColumn.Name = "messageTypeDataGridViewTextBoxColumn";
             // 
-            // button4
+            // defaultActionDataGridViewTextBoxColumn
             // 
-            button4.Location = new Point(273, 407);
-            button4.Name = "button4";
-            button4.Size = new Size(85, 42);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            defaultActionDataGridViewTextBoxColumn.DataPropertyName = "DefaultAction";
+            defaultActionDataGridViewTextBoxColumn.HeaderText = "DefaultAction";
+            defaultActionDataGridViewTextBoxColumn.Name = "defaultActionDataGridViewTextBoxColumn";
             // 
-            // button5
+            // ItemRuleId
             // 
-            button5.Location = new Point(364, 407);
-            button5.Name = "button5";
-            button5.Size = new Size(85, 42);
-            button5.TabIndex = 5;
-            button5.Text = "Close";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            ItemRuleId.DataPropertyName = "ItemRules.Id";
+            ItemRuleId.HeaderText = "ItemRule Id";
+            ItemRuleId.Name = "ItemRuleId";
             // 
-            // Form1
+            // fFilterSettings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(731, 452);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "fFilterSettings";
             ShowIcon = false;
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.Manual;
             Text = "Form1";
+            VisibleChanged += fFilterSettings_VisibleChanged;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ruleListBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -129,10 +105,9 @@ namespace NotificationFilter
 
         private DataGridView dataGridView1;
         private BindingSource bindingSource1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private BindingSource ruleListBindingSource;
+        private DataGridViewTextBoxColumn messageTypeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn defaultActionDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn ItemRuleId;
     }
 }

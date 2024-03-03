@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "DW2 mod debug": {
+      "commandName": "Executable",
+      "executablePath": "$(DW2_ROOT)\\DistantWorlds2.exe",
+      "commandLineArgs": "--low-level-inject \"$(TargetPath)!NotificationFilter.Preloader.Init\" --wait-for-debugger --skip-splash --continue",
+      "workingDirectory": "$(DW2_ROOT)\\",
+      "nativeDebugging": false
+    }
+  }
+}

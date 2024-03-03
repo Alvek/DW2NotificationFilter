@@ -1,0 +1,225 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows7.0</TargetFramework>
+		<UseWindowsForms>True</UseWindowsForms>
+		<Nullable>enable</Nullable>
+		<LangVersion>latest</LangVersion>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<EnableNETAnalyzers>False</EnableNETAnalyzers>
+		<RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
+		<RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+		<AnalysisLevel>none</AnalysisLevel>
+		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="RulesPanel.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="HarmonyX-Fix" Version="2.11.0" />
+	  <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
+	    <PrivateAssets>all</PrivateAssets>
+	  </PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="NativeMethods.txt" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Reference Include="DistantWorlds.Core">
+	    <HintPath>$(DW2_ROOT)\DistantWorlds.Core.dll</HintPath>
+	    <Private>True</Private>
+	  </Reference>
+	  <Reference Include="DistantWorlds.Types">
+	    <HintPath>$(DW2_ROOT)\DistantWorlds.Types.dll</HintPath>
+	    <Private>True</Private>
+	  </Reference>
+	  <Reference Include="DistantWorlds.UI">
+	    <HintPath>$(DW2_ROOT)\DistantWorlds.UI.dll</HintPath>
+	    <Private>True</Private>
+	  </Reference>
+	  <Reference Include="DistantWorlds2">
+	    <HintPath>$(DW2_ROOT)\DistantWorlds2.dll</HintPath>
+	    <Private>True</Private>
+	  </Reference>
+	  <Reference Include="Stride">
+	    <HintPath>$(DW2_ROOT)\Stride.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Assets">
+	    <HintPath>$(DW2_ROOT)\Stride.Assets.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Assets.Models">
+	    <HintPath>$(DW2_ROOT)\Stride.Assets.Models.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Assimp">
+	    <HintPath>$(DW2_ROOT)\Stride.Assimp.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Assimp.Translation">
+	    <HintPath>$(DW2_ROOT)\Stride.Assimp.Translation.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Audio">
+	    <HintPath>$(DW2_ROOT)\Stride.Audio.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Assets">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Assets.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Assets.CompilerApp">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Assets.CompilerApp.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.BuildEngine.Common">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.BuildEngine.Common.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Design">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Design.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.IO">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.IO.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Mathematics">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Mathematics.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.MicroThreading">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.MicroThreading.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Packages">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Packages.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.ProjectTemplating">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.ProjectTemplating.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Reflection">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Reflection.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Serialization">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Serialization.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Shaders">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Shaders.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Core.Yaml">
+	    <HintPath>$(DW2_ROOT)\Stride.Core.Yaml.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Engine">
+	    <HintPath>$(DW2_ROOT)\Stride.Engine.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Games">
+	    <HintPath>$(DW2_ROOT)\Stride.Games.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Graphics">
+	    <HintPath>$(DW2_ROOT)\Stride.Graphics.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Importer.Assimp">
+	    <HintPath>$(DW2_ROOT)\Stride.Importer.Assimp.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Importer.Common">
+	    <HintPath>$(DW2_ROOT)\Stride.Importer.Common.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Importer.FBX">
+	    <HintPath>$(DW2_ROOT)\Stride.Importer.FBX.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Input">
+	    <HintPath>$(DW2_ROOT)\Stride.Input.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Irony">
+	    <HintPath>$(DW2_ROOT)\Stride.Irony.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Native">
+	    <HintPath>$(DW2_ROOT)\Stride.Native.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Navigation">
+	    <HintPath>$(DW2_ROOT)\Stride.Navigation.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Particles">
+	    <HintPath>$(DW2_ROOT)\Stride.Particles.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Physics">
+	    <HintPath>$(DW2_ROOT)\Stride.Physics.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Rendering">
+	    <HintPath>$(DW2_ROOT)\Stride.Rendering.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Shaders">
+	    <HintPath>$(DW2_ROOT)\Stride.Shaders.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Shaders.Compiler">
+	    <HintPath>$(DW2_ROOT)\Stride.Shaders.Compiler.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Shaders.Parser">
+	    <HintPath>$(DW2_ROOT)\Stride.Shaders.Parser.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.SpriteStudio.Offline">
+	    <HintPath>$(DW2_ROOT)\Stride.SpriteStudio.Offline.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.SpriteStudio.Runtime">
+	    <HintPath>$(DW2_ROOT)\Stride.SpriteStudio.Runtime.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.TextureConverter">
+	    <HintPath>$(DW2_ROOT)\Stride.TextureConverter.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.UI">
+	    <HintPath>$(DW2_ROOT)\Stride.UI.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.Video">
+	    <HintPath>$(DW2_ROOT)\Stride.Video.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Stride.VirtualReality">
+	    <HintPath>$(DW2_ROOT)\Stride.VirtualReality.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="fFilterSettings.cs">
+	    <SubType>Form</SubType>
+	  </Compile>
+	</ItemGroup>
+
+</Project>
