@@ -1,5 +1,6 @@
 # **DW2 notification filtering mod**
 Work in progress.
+
 Mod will allow player to filter all types of notifications and apply selected choise each time this type of notification apears. 
 
 
